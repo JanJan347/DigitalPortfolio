@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Ismael G. Sandoval - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>JIS</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+         <!-- Dark/Light Mode Toggle -->
+    <div class="theme-toggle">
+        <i class="fas fa-sun" id="light-mode"></i>
+        <i class="fas fa-moon" id="dark-mode"></i>
+    </div>
+</nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <div class="home-container">
+            <div class="profile-pic">
+                <!-- Replace with your actual image path when hosting -->
+                <img src="profilepic.jfif" alt="John Ismael G. Sandoval" id="profileImage">
+            </div>
+            <div class="home-content">
+                <h1>Hi, I'm John Ismael G. Sandoval</h1>
+                <h3>Web Developer</h3>
+                <p>Passionate about creating innovative digital solutions and transforming ideas into reality.</p>
+                <!-- GitHub Button -->
+                <a href="https://github.com/JanJan347" target="_blank" class="btn github-btn">
+                    <i class="fab fa-github"></i> View My GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a dedicated Web Developer with a passion for creating exceptional web experiences. With expertise in modern technologies, I specialize in building responsive, user-friendly applications that solve real-world problems.</p>
+                    <p>I thrive on turning complex challenges into simple, beautiful solutions. Always learning and adapting to the latest technologies to deliver cutting-edge digital products.</p>
+                </div>
+            </div>
+            <h2 class="section-title">Awards and Recognition</h2>
+            <!-- Awards Images -->
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px;">
+                <img src="Digital Dilemmas Best Short Film 2nd Runner Up.png" alt="Digital Dilemmas" style="max-width: 250px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                <img src="Certificate of Publication.png" alt="Certificate of Publication" style="max-width: 250px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                <img src="java fundamentals.jpg" alt="Java Fundamentals Certificate" style="max-width: 250px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+            </div>
+            
+            <!-- Resume Download Button -->
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="JIS Resume.pdf" download class="btn resume-btn">
+                    <i class="fas fa-download"></i> Download JIS Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-bars">
+                        <div class="skill-item">
+                            <span>HTML/CSS</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>React</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-bars">
+                        <div class="skill-item">
+                            <span>Node.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>SQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+<section id="projects" class="section">
+    <div class="container">
+        <h2 class="section-title">Projects</h2>
+        
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-item">
+                <div class="project-image-container">
+                    <img src="Simple Multiplication Table.png" alt="Multiplication Table" class="project-image">
+                    <button class="view-btn" onclick="openModal('Simple Multiplication Table.png', 'Simple Multiplication Table')">
+                        <i class="fas fa-eye"></i> View
+                    </button>
+                </div>
+                <h3>Simple Multiplication Table</h3>
+                <p>It is a fundamental arithmetic exercise where numbers are arranged in a grid to show the product of two factors at their row and column intersection.</p>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-item">
+                <div class="project-image-container">
+                    <img src="Anita Women Basket.png" alt="Anita Women Basket" class="project-image">
+                    <button class="view-btn" onclick="openModal('Anita Women Basket.png', 'Anita Women Basket')">
+                        <i class="fas fa-eye"></i> View
+                    </button>
+                </div>
+                <h3>Anita Women Basket</h3>
+                <p>It refers to a social or economic empowerment initiative, often within the context of a community project or cooperative, where women collaborate to produce or sell handcrafted baskets to generate sustainable income.</p>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-item">
+                <div class="project-image-container">
+                    <img src="STI Enrollment Form.png" alt="STI Enrollment Form" class="project-image">
+                    <button class="view-btn" onclick="openModal('STI Enrollment Form.png', 'STI Enrollment Form')">
+                        <i class="fas fa-eye"></i> View
+                    </button>
+                </div>
+                <h3>STI Enrollment Form</h3>
+                <p>Involves accurately accomplishing the required personal, academic, and contact information fields to officially register a student for their chosen program and semester.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-caption" id="modalCaption"></div>
+    </div>
+</section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="section">
+        <div class="container">
+            <h2 class="section-title">Hobbies</h2>
+            <div class="hobbies-grid">
+                <div class="hobby-item">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Playing Online Games</h3>
+                    <p>Strategy games and Action games</p>
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-music"></i>
+                    <h3>Music</h3>
+                    <p>Love Songs and Rock Songs</p>
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-book"></i>
+                    <h3>Reading</h3>
+                    <p>Horror and Romantic Stories</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <a href="mailto:johnismael.sandoval4@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                            <h3>Email</h3>
+                            <p>johnismael.sandoval4@gmail.com</p>
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <h3>Phone</h3>
+                        <p>+938 640 7717</p>
+                    </div>
+                    <div class="contact-item">
+                        <a href="https://github.com/JanJan347" target="_blank" class="contact-link">
+                            <i class="fab fa-github"></i>
+                            <h3>GitHub</h3>
+                            <p>JanJan347</p>
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Location</h3>
+                        <p>Naga City, Camarines Sur</p>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+    <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="password" type="password" placeholder="Your Password" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+</div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html> 
