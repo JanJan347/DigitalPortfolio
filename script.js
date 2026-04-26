@@ -275,3 +275,130 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 }
+
+// Theme Toggle Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const lightModeBtn = document.getElementById('light-mode');
+    const darkModeBtn = document.getElementById('dark-mode');
+    const html = document.documentElement;
+    
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    applyTheme(currentTheme);
+    
+    // Toggle theme
+    lightModeBtn.addEventListener('click', () => toggleTheme('light'));
+    darkModeBtn.addEventListener('click', () => toggleTheme('dark'));
+    
+    function toggleTheme(theme) {
+        applyTheme(theme);
+        localStorage.setItem('theme', theme);
+    }
+    
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            html.setAttribute('data-theme', 'dark');
+            lightModeBtn.classList.remove('active-theme');
+            darkModeBtn.classList.add('active-theme');
+            lightModeBtn.style.opacity = '0.4';
+            darkModeBtn.style.opacity = '1';
+        } else {
+            html.removeAttribute('data-theme');
+            lightModeBtn.classList.add('active-theme');
+            darkModeBtn.classList.remove('active-theme');
+            lightModeBtn.style.opacity = '1';
+            darkModeBtn.style.opacity = '0.4';
+        }
+    }
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Navbar background on scroll (IMPROVED for both themes)
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    
+    if (window.scrollY > 50) {
+        if (currentTheme === 'dark') {
+            navbar.style.backgroundColor = 'rgba(42, 42, 42, 0.98)';
+        } else {
+            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+        }
+    } else {
+        if (currentTheme === 'dark') {
+            navbar.style.backgroundColor = 'rgba(42, 42, 42, 0.95)';
+        } else {
+            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+        }
+    }
+});
+
+// Animate skill bars when in view
+function animateSkillBars() {
+    const skillBars = document.querySelectorAll('.skill-progress');
+    skillBars.forEach(bar => {
+        const barPos = bar.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (barPos < windowHeight - 100) {
+            const width = bar.getAttribute('data-width');
+            bar.style.width = width;
+        }
+    });
+}
+
+window.addEventListener('scroll', animateSkillBars);
+animateSkillBars(); // Run on load
+
+// Image Modal Functions
+let modal = document.getElementById('imageModal');
+let modalImg = document.getElementById('modalImage');
+let captionText = document.getElementById('modalCaption');
+
+function openModal(imageSrc, caption) {
+    modal.style.display = 'block';
+    modalImg.src = imageSrc;
+    captionText.innerHTML = caption;
+}
+
+function closeModal() {
+    modal.style.display = 'none';
+}
+
+// Close modal when clicking outside image
+window.onclick = function(event) {
+    if (event.target == modal) {
+        closeModal();
+    }
+}
+
+// Contact form submission
+document.querySelector('.contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your message! I\'ll get back to you soon.');
+    this.reset();
+});
+
+// Mobile hamburger menu
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+}
