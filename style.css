@@ -935,3 +935,29 @@ html {
     text-align: center;
     color: var(--primary-color, #333);
 }
+
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    border-top: 1px solid #444;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Dark/Light mode support for footer */
+body.dark .footer {
+    background: #1a1a1a;
+    border-top-color: #444;
+}
